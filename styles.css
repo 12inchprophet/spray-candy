@@ -1,0 +1,230 @@
+/* General body styling with background for each stage */
+body.stage1 {
+    background-image: url("https://thedailyarc.did.life/image-bin/uploads/ef1495a72127dd16edbc55d54ea9bf2f.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.stage2 {
+    background-image: url("https://thedailyarc.did.life/image-bin/uploads/8fdd27951cc3c04578c332fbfd5910d7.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.stage3 {
+    background-image: url("https://thedailyarc.did.life/image-bin/uploads/your_stage3_background_image.png"); /* Update with actual URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.game-over {
+    background-image: none;
+    background-color: black;
+}
+
+.game-container {
+    text-align: center;
+    width: 90vw;
+    max-width: 600px;
+}
+
+#game-title {
+    font-family: 'Graffiti', sans-serif;
+    font-size: 3rem;
+    color: #ff4500;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.game-header {
+    margin: 20px;
+}
+
+/* Game board with semi-transparent black background and gold shimmer */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 7px rgba(255, 215, 0, 0.6);
+    border: 2px solid rgba(255, 215, 0, 0.8);
+}
+
+.element {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 8px;
+    background-size: cover;
+    transition: transform 0.2s;
+}
+
+/* Black Overlay */
+#black-overlay {
+    display: none; /* Hide initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 998; /* Slightly below the win-message overlay */
+}
+
+/* Flashing Police Lights */
+@keyframes policeLights {
+    0% { background-color: red; opacity: 0.7; }
+    50% { background-color: blue; opacity: 0.7; }
+    100% { background-color: red; opacity: 0.7; }
+}
+
+#police-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000; /* Ensure it’s on top */
+    display: none; /* Initially hidden */
+    animation: policeLights 0.5s infinite; /* Flashing effect */
+    opacity: 0.7;
+}
+
+/* Win message styling */
+#win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+    z-index: 10001;
+    animation: pop-in 0.8s forwards;
+}
+
+#win-message a {
+    color: yellow;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+#next-stage, #restart-bottom, #restart-game-over {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Game Over message styling */
+#game-over-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: red;
+    text-align: center;
+    z-index: 10001;
+}
+
+/* Animation for popping in the win or game-over message */
+@keyframes pop-in {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Score effect styling */
+.score-effect {
+    position: absolute;
+    color: gold;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: score-pop 1s forwards;
+    pointer-events: none;
+}
+
+@keyframes score-pop {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Glowing effect for matched elements */
+.element.glow {
+    animation: glow 0.5s ease-out;
+    box-shadow: 0 0 10px 5px gold;
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px gold, 0 0 10px gold;
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px gold, 0 0 20px gold;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px gold, 0 0 10px gold;
+    }
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(8, 10vw);
+        gap: 1vw;
+    }
+
+    .element {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    #win-message, #game-over-message {
+        font-size: 1.5rem;
+    }
+
+    .score-effect {
+        font-size: 1rem;
+    }
+}

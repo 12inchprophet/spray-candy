@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spray Candy - Stage 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="stage1">
+    <div class="game-container">
+        <header class="game-header">
+            <h1 id="game-title">Spray Candy</h1>
+            <div class="score">Score: <span id="score">0</span></div>
+        </header>
+        <main class="game-board">
+            <!-- Game elements will be dynamically added here -->
+        </main>
+        <footer class="game-controls">
+            <button id="start">Push to Start</button>
+            <button id="restart" style="display: none">Restart Game</button>
+        </footer>
+    </div>
+
+    <!-- Winning Message for Stage 3 -->
+    <div id="win-message" style="display: none;">
+        <h2>You Win, Download your song here!</h2>
+        <a href="https://thedailyarc.did.life/image-bin/uploads/fb7dc2639b6b7b1cb8e1d2b9e76a0f53.mpga" download>Download Song</a>
+        <button id="next-stage" style="display: none;">Next Stage</button>
+        <button id="restart-bottom" style="display: none;">Restart Game</button>
+    </div>
+
+    <!-- Game Over Message -->
+    <div id="game-over-message" style="display: none;">
+        <h2>TOO SLOW. YOU'RE BUSTED!</h2>
+        <button id="restart-game-over" style="display: none;">Restart Game</button>
+    </div>
+
+    <!-- Black Overlay for Winning Screen -->
+    <div id="black-overlay" style="display: none;"></div>
+
+    <!-- Police Lights Overlay -->
+    <div id="police-lights" style="display: none;"></div>
+
+    <!-- Audio Elements for Stages 1, 2, and 3 -->
+    <audio id="level1" src="https://thedailyarc.did.life/image-bin/uploads/b0d15849c619e27e696be6b28e4c64aa.mpga" loop></audio>
+    <audio id="level2" src="https://thedailyarc.did.life/image-bin/uploads/b2fc236161c660be95ece3313c3ac08e.mpga" loop></audio>
+    <audio id="level3" src="https://thedailyarc.did.life/image-bin/uploads/e39e7cfbcd2e34fb674b4615675e1415.mpga" loop></audio>
+    <audio id="level4" src="https://thedailyarc.did.life/image-bin/uploads/44acac97d1bfd584571fe2ad32620ba1.mpga" loop></audio>
+    <audio id="level5" src="https://thedailyarc.did.life/image-bin/uploads/8f3fe41148af814cb802fdd5bbe18fbd.mpga" loop></audio>
+
+    <!-- Stage 2 Audio -->
+    <audio id="stage2-level1" src="https://thedailyarc.did.life/image-bin/uploads/53d59bbd04eb8f4185e97f8b9682be87.mpga" loop></audio>
+    <audio id="stage2-level2" src="https://thedailyarc.did.life/image-bin/uploads/8a2be44d45227bc35f480df43808b1bd.mpga" loop></audio>
+    <audio id="stage2-level3" src="https://thedailyarc.did.life/image-bin/uploads/dd15a5c74fad61f2d8d3bba8bbefbaed.mpga" loop></audio>
+    <audio id="stage2-level4" src="https://thedailyarc.did.life/image-bin/uploads/c51d5d6d01205cc7ba4ac857bc369f08.mpga" loop></audio>
+    <audio id="stage2-level5" src="https://thedailyarc.did.life/image-bin/uploads/f99774fd0e1cdddcbf3970c9014270d4.mpga" loop></audio>
+
+    <!-- Stage 3 Audio -->
+    <audio id="stage3-level1" src="https://thedailyarc.did.life/image-bin/uploads/25145a0407cbaed8b07f39305a120538.mpga" loop></audio>
+    <audio id="stage3-level2" src="https://thedailyarc.did.life/image-bin/uploads/7ee5d5262aae951bca5cb3ee56ecd564.mpga" loop></audio>
+    <audio id="stage3-level3" src="https://thedailyarc.did.life/image-bin/uploads/16c978cd3ad1ca1facdc69abfa281ac4.mpga" loop></audio>
+    <audio id="stage3-level4" src="https://thedailyarc.did.life/image-bin/uploads/8a582be2b9d339a5ac3a09488e9439cc.mpga" loop></audio>
+    <audio id="stage3-level5" src="https://thedailyarc.did.life/image-bin/uploads/afc1bd18c9d71bcb4ab9bd971936f104.mpga" loop></audio>
+
+    <!-- Game Sounds -->
+    <audio id="gunshot" src="https://thedailyarc.did.life/image-bin/uploads/c96ac699898d54d50e07d5b42c3d3796.mpga"></audio>
+    <audio id="siren" src="https://thedailyarc.did.life/image-bin/uploads/5e43538a75d6f0a4edc06e016a9a362c.mpga"></audio>
+    <audio id="cheering" src="https://thedailyarc.did.life/image-bin/uploads/c4cb1c265abb6b7b9cb597b58475f1bf.mpga"></audio>
+    <audio id="scratch" src="https://thedailyarc.did.life/image-bin/uploads/49a8641de19426fa0ec407ef9df4b174.mpga"></audio>
+
+    <!-- Game Script -->
+    <script src="script.js"></script>
+</body>
+</html>
